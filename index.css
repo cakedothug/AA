@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cores principais baseadas na imagem do Tokyo Edge RP */
+  --background: 220 10% 6%;
+  --foreground: 0 0% 98%;
+  --muted: 220 8% 12%;
+  --muted-foreground: 220 5% 64.9%;
+  --popover: 220 10% 6%;
+  --popover-foreground: 0 0% 98%;
+  --card: 220 10% 8%;
+  --card-foreground: 0 0% 98%;
+  --border: 220 15% 12%;
+  --input: 220 15% 12%;
+  
+  /* Cor primária - laranja/dourado como na imagem do pôr do sol */
+  --primary: 36 100% 50%;
+  --primary-foreground: 0 0% 10%;
+  
+  /* Cor secundária - azul escuro complementar */
+  --secondary: 220 70% 25%;
+  --secondary-foreground: 0 0% 98%;
+  
+  /* Cor de destaque - azul claro/ciano para contrastar */
+  --accent: 185 100% 50%;
+  --accent-foreground: 0 0% 10%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 36 100% 50%;
+  --radius: 0.5rem;
+}
+
+.light {
+  --background: 0 0% 98%;
+  --foreground: 220 10% 4%;
+  --muted: 220 10% 92%;
+  --muted-foreground: 220 5% 40%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 10% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 10% 4%;
+  --border: 220 15% 85%;
+  --input: 220 15% 85%;
+  --primary: 36 100% 50%;
+  --primary-foreground: 0 0% 10%;
+  --secondary: 220 70% 40%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 185 100% 50%;
+  --accent-foreground: 0 0% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 36 100% 50%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background-image: url('/tokyo-edge-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  /* Estilos globais de tipografia */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  /* Link padrão */
+  a {
+    @apply text-primary hover:text-primary/80 transition-colors;
+  }
+}
+
+/* Classes de utilidade personalizadas */
+@layer components {
+  .container-glass {
+    @apply bg-background/80 backdrop-blur-md border border-border/50 rounded-lg shadow-lg;
+  }
+  
+  .bg-gradient-tokyo {
+    @apply bg-gradient-to-r from-secondary/80 via-primary/50 to-accent/80;
+  }
+  
+  .text-gradient-tokyo {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-accent;
+  }
+}
+
